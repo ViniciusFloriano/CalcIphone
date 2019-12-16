@@ -1,0 +1,197 @@
+﻿<Window x:Class="Calculadora.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Calculadora"
+        mc:Ignorable="d"
+        xmlns:fw="clr-namespace:SourceChord.FluentWPF;assembly=FluentWPF"
+        fw:AcrylicWindow.Enabled="True"
+        fw:AcrylicWindow.TintColor="Black"
+        fw:AcrylicWindow.AcrylicWindowStyle="NoIcon"
+        MouseDown="Window_MouseDown"
+        Padding="15"
+        Title="Calculadora" Height="532" Width="304" Background="Black" Foreground="White" ResizeMode="NoResize" WindowStartupLocation="CenterScreen" WindowStyle="None" AllowsTransparency="True">
+    <Window.Resources>
+        <Style x:Key="RoundedButtonStyleLigth" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="35" Background="#FFA5A5A5" BorderThickness="1" Padding="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="Foreground" Value="Black"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="35" Background="#FFE5E5E5" BorderThickness="1" Padding="2">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="RoundedButtonStyleNormal" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="35" Background="#FF333333" BorderThickness="1" Padding="2">
+                            <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="35" Background="#FF737373" BorderThickness="1" Padding="2">
+                                    <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="RoundedButtonStyleNormalZero" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="35" Background="#FF333333" BorderThickness="1" Padding="2">
+                            <ContentPresenter HorizontalAlignment="Left" Margin="20,5,5,5" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="26"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="35" Background="#FF737373" BorderThickness="1" Padding="2">
+                                    <ContentPresenter HorizontalAlignment="Left" Margin="20,5,5,5" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+        
+        <Style x:Key="RoundedButtonStyleEsp" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="35" Background="#fffe9c09" BorderThickness="1" Padding="2">
+                            <ContentPresenter Margin="0,0,0,5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="36"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="35" Background="#fffEDC49" BorderThickness="1" Padding="2">
+                                    <ContentPresenter Margin="0,0,0,5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style x:Key="RoundedButtonStyleEspActive" TargetType="{x:Type Button}">
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border CornerRadius="35" Background="White" BorderThickness="1" Padding="2">
+                            <ContentPresenter Margin="0,0,0,5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                        </Border>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+            <Setter Property="FontWeight" Value="SemiBold"/>
+            <Setter Property="Margin" Value="5"/>
+            <Setter Property="FontSize" Value="36"/>
+            <Setter Property="Foreground" Value="#fffe9c09"/>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Template">
+                        <Setter.Value>
+                            <ControlTemplate TargetType="Button">
+                                <Border CornerRadius="35" Background="White" BorderThickness="1" Padding="2">
+                                    <ContentPresenter Margin="0,0,0,5" HorizontalAlignment="Center" VerticalAlignment="Center" />
+                                </Border>
+                            </ControlTemplate>
+                        </Setter.Value>
+                    </Setter>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+    </Window.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+        <TextBlock Name="txtResultado" Grid.ColumnSpan="4"  VerticalAlignment="Bottom" HorizontalAlignment="Right" FontSize="65" Margin="15,15,15,0">0</TextBlock>
+        <Button Click="Ac_Click" Style="{StaticResource RoundedButtonStyleLigth}" Grid.Row="1" Grid.Column="0">AC</Button>
+        <Button Click="MaisMenos_Click" Style="{StaticResource RoundedButtonStyleLigth}" Grid.Row="1" Grid.Column="1">+/-</Button>
+        <Button Click="PorCem_Click" Style="{StaticResource RoundedButtonStyleLigth}" Grid.Row="1" Grid.Column="2">%</Button>
+        <Button Name="Operator1" Click="Operador_Click" Style="{StaticResource RoundedButtonStyleEsp}" Grid.Row="1" Grid.Column="3">÷</Button>
+        <Button Name="Operator2" Click="Operador_Click" Style="{StaticResource RoundedButtonStyleEsp}" Grid.Row="2" Grid.Column="3">×</Button>
+        <Button Name="Operator3" Click="Operador_Click" Style="{StaticResource RoundedButtonStyleEsp}" Grid.Row="3" Grid.Column="3">-</Button>
+        <Button Name="Operator4" Click="Operador_Click" Style="{StaticResource RoundedButtonStyleEsp}" Grid.Row="4" Grid.Column="3">+</Button>
+        <Button Click="Igual_Click" Style="{StaticResource RoundedButtonStyleEsp}" Grid.Row="5" Grid.Column="3">=</Button>
+        <Button Click="Num_Click" Style="{StaticResource RoundedButtonStyleNormal}" Grid.Row="2" Grid.Column="0">7</Button>
+        <Button Click="Num_Click" Style="{StaticResource RoundedButtonStyleNormal}" Grid.Row="2" Grid.Column="1">8</Button>
+        <Button Click="Num_Click" Style="{StaticResource RoundedButtonStyleNormal}" Grid.Row="2" Grid.Column="2">9</Button>
+        <Button Click="Num_Click" Style="{StaticResource RoundedButtonStyleNormal}" Grid.Row="3" Grid.Column="0">4</Button>
+        <Button Click="Num_Click" Style="{StaticResource RoundedButtonStyleNormal}" Grid.Row="3" Grid.Column="1">5</Button>
+        <Button Click="Num_Click" Style="{StaticResource RoundedButtonStyleNormal}" Grid.Row="3" Grid.Column="2">6</Button>
+        <Button Click="Num_Click" Style="{StaticResource RoundedButtonStyleNormal}" Grid.Row="4" Grid.Column="0">1</Button>
+        <Button Click="Num_Click" Style="{StaticResource RoundedButtonStyleNormal}" Grid.Row="4" Grid.Column="1">2</Button>
+        <Button Click="Num_Click" Style="{StaticResource RoundedButtonStyleNormal}" Grid.Row="4" Grid.Column="2">3</Button>
+        <Button Click="Num_Click" Style="{StaticResource RoundedButtonStyleNormalZero}" Grid.ColumnSpan="2" Grid.Row="5" Grid.Column="0">0</Button>
+        <Button Click="Virgula_Click" Style="{StaticResource RoundedButtonStyleNormal}" Grid.Row="5" Grid.Column="2">,</Button>
+    </Grid>
+</Window>
