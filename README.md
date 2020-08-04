@@ -19,4 +19,8 @@ Esse projeto foi desenvolvido com as seguintes tecnologias:
 
 Esse projeto foi desenvolvido com o propósito de estudo dessa tecnologia muito utilizada na industria, além de aprimorar minhas habilidades de frontend.
 
+## Licença
+
+Este projeto está licenciado pelos termos da licença MIT.
+
 Feito por Vinicius Pereira Floriano Filho
